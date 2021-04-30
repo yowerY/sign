@@ -79,7 +79,7 @@ public class CourseServiceImpl extends ServiceImpl<BaseMapper<Course>,Course> im
             Map<Long,User> userMap = userList.stream().collect(Collectors.toMap(User::getId, v->v));
 
 
-            List<Long> departmentIdList = courseList.stream().map(Course::getUserId).collect(Collectors.toList());
+            List<Long> departmentIdList = courseList.stream().map(Course::getDepartmentId).collect(Collectors.toList());
             QueryWrapper<Department> departmentQueryWrapper = new QueryWrapper<>();
             departmentQueryWrapper.in("id",departmentIdList);
 

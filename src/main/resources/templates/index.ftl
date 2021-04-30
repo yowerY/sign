@@ -1,7 +1,7 @@
 <#include "header.ftl">
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+            <div class="" style="width:100%">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <#list courseList as course>
                         <div class="panel panel-default">
