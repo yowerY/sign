@@ -50,6 +50,7 @@ a:hover,a:focus{
     left: -20px;
     transition: all 0.3s ease 0s;
 }
+
 #accordion .panel-title a.collapsed:after{
     content: "\f105";
     background: #fff;
@@ -70,13 +71,4 @@ a:hover,a:focus{
     padding-left: 25px;
     border-left: 1px dashed #8c8c8c;
     font-size: 15px;
-}
-.collapse{display:block}
-
-.panel-body.show{
-    height:82px;
-}
-
-.navbar-collapse.show{
-    height:41px;
 }

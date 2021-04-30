@@ -28,7 +28,7 @@
                                     </a>
                                 </h4>
                             </div>
-                            <div id="${course.id}-collapse" style="overflow: hidden ;"  class="" role="tabpanel" aria-labelledby="${course.id}-heading">
+                            <div id="${course.id}-collapse" style="overflow: hidden ;height: 0px"  class="panel-collapse collapse" role="tabpanel" aria-labelledby="${course.id}-heading">
                                 <div class="panel-body toggle-body" aria-labelledby="${course.id}-panel-body">
                                     <div style="background-color: rgb(246,235,172)">
                                         <p style="float: left;text-align: center">
@@ -57,10 +57,24 @@
 
 <script>
         $(document).ready(function() {
-            $("a").click(function(){
-                var id = $(this).attr("aria-controls").split("-")[0];
-                $("div[aria-labelledby="+id+"-panel-body]").toggleClass("toggle-body");
-            })
+            var isClick = true;
+            $("a").on("click",function(){
+                if(isClick) {
+                    var id = $(this).attr("aria-controls").split("-")[0];
+                    $("div[aria-labelledby="+id+"-panel-body]").toggleClass("toggle-body");
+
+                    isClick = false;
+                    //定时器
+                    setTimeout(function() {
+                        isClick = true;
+                    }, 500);//一秒内不能重复点击
+
+                }else{
+                    return false;
+                }
+
+            });
+
         })
 
         function signRecord(id) {

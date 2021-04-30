@@ -38,9 +38,9 @@
                         <span>
                             <i class="glyphicon glyphicon-time"></i> ${comment.commentTime?string('yyyy-MM-dd HH:mm:ss')}
                         </span>
-                        <span>
+                        <#--<span>-->
                             <#--<i class="glyphicon glyphicon-map-marker"></i>深圳-->
-                        </span>
+                        <#--</span>-->
                     </div>
                     <p class="content">
                         ${comment.comment}
@@ -73,11 +73,13 @@
 
                 if(!content || content == ''){
                     alert("请填写评论");
+                    return;
                 }
                 var courseId = getUrlParam("courseId");
                 var level = $(".is--active").length;
                 if(level == 0){
                     alert("请先评分");
+                    return;
                 }
 
                 $.ajax({
